@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: palevioletred;
+}
+
+.letra {
+    background-color: #9FAAB5;
+    border: solid #7AA7C7 1px;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    margin-top: 11px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #798A9F;
+
+}
+
+.letrasnatela {
+    width: 684px;
+    margin-left: 211px;
+    margin-top: 70.33px;
+
+}
+
+.Jogo {
+    display: flex;
+}
+
+.imageminicial {
+    width: 400px;
+    height: 466.67px;
+    margin-top: 59px;
+    margin-left: 38px;
+}
+
+.iniciajogo {
+    background-color: #27AE60;
+    Width: 200px;
+    Height: 60px;
+    border-radius: 8px;
+
+    font-family: 'Roboto';
+    font-Weight: 700;
+    font-Size: 20px;
+    Line-height: 23.44px;
+    color: #FFFFFF;
+
+    border: transparent;
+    margin-top: 89px;
+    margin-left: 334px;
+}
