@@ -9,16 +9,15 @@ import forca6 from "./assets/forca6.png"
 
 export default function Jogo(palavra) {
     console.log(palavra)
-    
+    const arrayPalavra = [];
     function constroiArray(palavra) {
-        const arrayPalavra = [];
+        
         for (let i = 0; i < palavra.length; i++) {
             arrayPalavra.push(palavra[i])
             console.log(palavra[i])
         }
     }
-
-
+    constroiArray(palavra)
     console.log(arrayPalavra)
     return (
         <div className="Jogo">
