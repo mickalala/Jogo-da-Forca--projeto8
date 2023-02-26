@@ -6,25 +6,38 @@ import forca3 from "./assets/forca3.png"
 import forca4 from "./assets/forca4.png"
 import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
+import palavras from "./palavras"
 
-export default function Jogo(palavra) {
-    console.log(palavra)
-    const arrayPalavra = [];
-    function constroiArray(palavra) {
-        
-        for (let i = 0; i < palavra.length; i++) {
-            arrayPalavra.push(palavra[i])
-            console.log(palavra[i])
-        }
+export default function Jogo({ setClicado, clicado, arrayPalavra, arrayNaTela, setArrayNaTela }) {
+    const array= {arrayPalavra}.arrayPalavra
+    console.log(array)
+    const num= array.length;
+    console.log(num)
+    const verSeClicou= {clicado}.clicado;
+    console.log( verSeClicou );
+    const mostra={arrayNaTela}.arrayNaTela;
+
+    function botaoclicado() {
+        setClicado("foiClicado")
+         constroiUnderlines()
     }
-    constroiArray(palavra)
-    console.log(arrayPalavra)
+    console.log(mostra)
+
+    function constroiUnderlines() {
+        console.log("AAAAAAAAAAAAAAAAAAAAAAA");
+        const novoarray=[...mostra]
+       for(let i=0;i<num;i++){
+           novoarray.push(" _ ")
+        }
+        setArrayNaTela(novoarray)
+    }
+
     return (
         <div className="Jogo">
             <img src={forca0} className="imageminicial" />
             <div>
-                <button className="iniciajogo" > Escolher Palavra</button>
-
+                <button className={`iniciajogo`} onClick={botaoclicado} > Escolher Palavra</button>
+                <p className="palavranatela">{mostra}</p>
             </div>
         </div>
     )
