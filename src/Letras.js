@@ -49,13 +49,15 @@ export default function Letras({clicado,palavra,setErro,erro,letraterminada,setL
         }
         console.log(match)
     }
-
-
+let verifica=""
+for(let i=0;i<arraydenovo.legth;i++){
+verifica+=arraydenovo[i]
+}
 
     return(
         <ul className="letrasnatela">
         {alfabeto.map((alf,index) => ( 
-                <button key={index} className={`letra ${(letraterminada.includes(alf) || confirma !== "foiClicado")? "disable":""}`} disabled={!(confirma==="foiClicado")|| letraterminada.includes(alf) || contador>= 6 || acerto==="deubom"} onClick={()=>foiSelecionada(alf)}>{alf}</button>
+                <button data-test="letter" key={index} className={`letra ${(letraterminada.includes(alf) || confirma !== "foiClicado" || contador>=6 || verifica==palavra )? "disable":""}`} disabled={!(confirma==="foiClicado")|| letraterminada.includes(alf) || contador>= 6 || acerto==="deubom"} onClick={()=>foiSelecionada(alf)}>{alf}</button>
         )
         )}
         </ul>

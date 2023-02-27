@@ -22,19 +22,19 @@ console.log(palavracomp)
 
     return (
         <div className="Jogo">
-            {(erro == 0) && (<img src={forca0} className="imageminicial" />)}
-            {(erro == 1) && (<img src={forca1} className="imageminicial" />)}
-            {(erro == 2) && (<img src={forca2} className="imageminicial" />)}
-            {(erro == 3) && (<img src={forca3} className="imageminicial" />)}
-            {(erro == 4) && (<img src={forca4} className="imageminicial" />)}
-            {(erro == 5) && (<img src={forca5} className="imageminicial" />)}
-            {(erro == 6) && (<img src={forca6} className="imageminicial" />)}
+            {(erro == 0) && (<img src={forca0} className="imageminicial" data-test="game-image"/>)}
+            {(erro == 1) && (<img src={forca1} className="imageminicial" data-test="game-image"/>)}
+            {(erro == 2) && (<img src={forca2} className="imageminicial" data-test="game-image"/>)}
+            {(erro == 3) && (<img src={forca3} className="imageminicial" data-test="game-image"/>)}
+            {(erro == 4) && (<img src={forca4} className="imageminicial" data-test="game-image"/>)}
+            {(erro == 5) && (<img src={forca5} className="imageminicial" data-test="game-image"/>)}
+            {(erro == 6) && (<img src={forca6} className="imageminicial" data-test="game-image"/>)}
 
             <div>
-                <button className={`iniciajogo`} onClick={botaoclicado} > Escolher Palavra</button>
-               { (erro !== 6)&& (palavracomp!==palavra) && (<p className="palavranatela" >{mostra}</p>)}
-               { (erro == 6) && (<p className="palavranatela vermelha" >{palavra}</p>)}
-               { (erro !== 6) && (palavracomp==palavra) && (<p className="palavranatela verde" >{palavra}</p>)}
+                <button className={`iniciajogo`} onClick={botaoclicado} data-test="choose-word"> Escolher Palavra</button>
+               { (erro !== 6)&& (palavracomp!==palavra) && (<p className="palavranatela" data-test="word">{mostra}</p>)}
+               { (erro == 6) && (<p className="palavranatela vermelha" data-test="word">{palavra}</p>)}
+               { (erro !== 6) && (palavracomp==palavra) && (<p className="palavranatela verde" data-test="word">{palavra}</p>)}
             </div>
         </div>
     )
