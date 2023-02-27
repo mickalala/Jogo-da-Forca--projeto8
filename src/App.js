@@ -13,38 +13,16 @@ function App() {
   const arrayPalavra = [];
   const [arrayNaTela, setArrayNaTela]= useState([])
   const[erro, setErro]= useState([0]);
-  const novoarray=[...arrayNaTela]
+ console.log(erro +"esse éoerro")
  
-  function constroiArray() {
-    
-      for (let i = 0; i < palavra.length; i++) {
-          arrayPalavra.push(palavra[i])
-      } 
-      let num=arrayPalavra.length;
-      
-    
-  }
-  function constroiUnderlines(num) {
-    console.log("AAAAAAAAAAAAAAAAAAAAAAA");
-   for(let i=0;i<num;i++){
-       novoarray.push(" _ ")
-    }
-    setArrayNaTela(novoarray)
-
-}
-  function verificaClicado(){
-    if(clicado==="foiClicado"){
-  constroiArray();}
-}
-
-verificaClicado();
 
   console.log(arrayPalavra);
   return (
     <div className="App">
       <Jogo arrayPalavra={arrayPalavra} clicado={clicado} setClicado={setClicado}
-       arrayNaTela={arrayNaTela} setArrayNaTela={setArrayNaTela}/>
-      <Letras clicado={clicado} />
+       arrayNaTela={arrayNaTela} setArrayNaTela={setArrayNaTela} palavra={palavra}
+       erro={erro}/>
+      <Letras clicado={clicado} palavra={palavra} setErro={setErro} erro={erro}/>
     </div>
   );
 }

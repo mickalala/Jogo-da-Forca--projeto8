@@ -8,7 +8,7 @@ import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
 import palavras from "./palavras"
 
-export default function Jogo({ setClicado, clicado, arrayPalavra, arrayNaTela, setArrayNaTela }) {
+export default function Jogo({ setClicado, clicado, arrayPalavra, arrayNaTela, setArrayNaTela, palavra,erro }) {
     const array= {arrayPalavra}.arrayPalavra
     console.log(array)
     const num= array.length;
@@ -17,25 +17,42 @@ export default function Jogo({ setClicado, clicado, arrayPalavra, arrayNaTela, s
     console.log( verSeClicou );
     const mostra={arrayNaTela}.arrayNaTela;
 
+    console.log("Erronojogo"+erro)
+    
+
     function botaoclicado() {
         setClicado("foiClicado")
-         constroiUnderlines()
+       
     }
     console.log(mostra)
    
-    function constroiUnderlines() {
-        console.log("AAAAAAAAAAAAAAAAAAAAAAA");
-        const novoarray=[...mostra]
-       for(let i=0;i<num;i++){
-           novoarray.push(" _ ")
-        }
-        setArrayNaTela(novoarray)
+    function constroiArray() {
+        console.log(palavra)
+        for (let i = 0; i < (palavra.length)/2; i++) {
+            mostra.push(" _ ")
+        
+        } 
+        
     }
-    // (verSeClicou==="foiClicado")
+    
+    function verificaClicado(){
+        if(verSeClicou==="foiClicado"){
+      constroiArray() ;
+    
+     }
+    }
+    verificaClicado()
 
     return (
         <div className="Jogo">
-            <img src={forca0} className="imageminicial" />
+            {(erro == 0) && (<img src={forca0} className="imageminicial" />)}
+            {(erro == 1) && (<img src={forca1} className="imageminicial" />)}
+            {(erro == 2) && (<img src={forca2} className="imageminicial" />)}
+            {(erro == 3) && (<img src={forca3} className="imageminicial" />)}
+            {(erro == 4) && (<img src={forca4} className="imageminicial" />)}
+            {(erro == 5) && (<img src={forca5} className="imageminicial" />)}
+            {(erro == 6) && (<img src={forca6} className="imageminicial" />)}
+
             <div>
                 <button className={`iniciajogo`} onClick={botaoclicado} > Escolher Palavra</button>
                 <p className="palavranatela" >{mostra}</p>
