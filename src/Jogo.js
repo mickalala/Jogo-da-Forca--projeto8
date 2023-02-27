@@ -8,40 +8,12 @@ import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
 import palavras from "./palavras"
 
-export default function Jogo({ setClicado, clicado, arrayPalavra, arrayNaTela, setArrayNaTela, palavra,erro }) {
-    const array= {arrayPalavra}.arrayPalavra
-    console.log(array)
-    const num= array.length;
-    console.log(num)
-    const verSeClicou= {clicado}.clicado;
-    console.log( verSeClicou );
+export default function Jogo({ arrayNaTela, botaoclicado,erro }) {
+  
     const mostra={arrayNaTela}.arrayNaTela;
 
     console.log("Erronojogo"+erro)
     
-
-    function botaoclicado() {
-        setClicado("foiClicado")
-       
-    }
-    console.log(mostra)
-   
-    function constroiArray() {
-        console.log(palavra)
-        for (let i = 0; i < (palavra.length)/2; i++) {
-            mostra.push(" _ ")
-        
-        } 
-        
-    }
-    
-    function verificaClicado(){
-        if(verSeClicou==="foiClicado"){
-      constroiArray() ;
-    
-     }
-    }
-    verificaClicado()
 
     return (
         <div className="Jogo">
