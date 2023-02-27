@@ -15,8 +15,16 @@ function App() {
   const [arrayNaTela, setArrayNaTela]= useState([])
   const[erro, setErro]= useState([0]);
  console.log(erro +"esse éoerro")
- const novoarray=[]
+ const[novoarray, setNovoarray] =useState([]);
+ const[acerto,setAcerto]= useState([]);
 
+
+
+ const [letraterminada, setLetraterminada]= useState([])
+
+ const teste2= {letraterminada}.letraterminada;
+
+ console.log("essasaoasletrasterminada"+teste2)
 
  function constroiArray() {
   console.log("chegou aqui")
@@ -31,6 +39,8 @@ function App() {
     console.log(arrayPalavra)    
     console.log(novoarray)
 }
+
+
  
  function botaoclicado() {
   
@@ -46,11 +56,13 @@ function App() {
 
   return (
     <div className="App">
-      <Jogo arrayPalavra={arrayPalavra} clicado={clicado} setClicado={setClicado}
-       arrayNaTela={arrayNaTela} setArrayNaTela={setArrayNaTela} botaoclicado={botaoclicado}
-       erro={erro}
+      <Jogo  arrayNaTela={arrayNaTela}  botaoclicado={botaoclicado}
+       erro={erro} palavra={palavra} acerto={acerto} setAcerto={setAcerto}
        />
-      <Letras clicado={clicado} palavra={palavra} setErro={setErro} erro={erro}/>
+      <Letras clicado={clicado} palavra={palavra} setErro={setErro} erro={erro}
+       letraterminada={letraterminada} setLetraterminada={setLetraterminada} setNovoarray={setNovoarray} 
+        novoarray={novoarray} setArrayNaTela={setArrayNaTela} constroiArray={constroiArray} acerto={acerto} setAcerto={setAcerto}
+      />
     </div>
   );
 }

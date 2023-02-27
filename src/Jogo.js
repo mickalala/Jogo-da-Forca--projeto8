@@ -8,12 +8,17 @@ import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
 import palavras from "./palavras"
 
-export default function Jogo({ arrayNaTela, botaoclicado,erro }) {
+export default function Jogo({ arrayNaTela, botaoclicado,erro, palavra, acerto }) {
   
     const mostra={arrayNaTela}.arrayNaTela;
+ 
+    let palavracomp=""
 
-    console.log("Erronojogo"+erro)
-    
+for(let i=0;i<mostra.length;i++){
+palavracomp+=mostra[i];
+}
+console.log("lá se vai palavra comp")
+console.log(palavracomp)
 
     return (
         <div className="Jogo">
@@ -27,7 +32,9 @@ export default function Jogo({ arrayNaTela, botaoclicado,erro }) {
 
             <div>
                 <button className={`iniciajogo`} onClick={botaoclicado} > Escolher Palavra</button>
-                <p className="palavranatela" >{mostra}</p>
+               { (erro !== 6)&& (palavracomp!==palavra) && (<p className="palavranatela" >{mostra}</p>)}
+               { (erro == 6) && (<p className="palavranatela vermelha" >{palavra}</p>)}
+               { (erro !== 6) && (palavracomp==palavra) && (<p className="palavranatela verde" >{palavra}</p>)}
             </div>
         </div>
     )
