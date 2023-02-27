@@ -22,7 +22,7 @@ export default function Jogo({ setClicado, clicado, arrayPalavra, arrayNaTela, s
          constroiUnderlines()
     }
     console.log(mostra)
-
+   
     function constroiUnderlines() {
         console.log("AAAAAAAAAAAAAAAAAAAAAAA");
         const novoarray=[...mostra]
@@ -31,13 +31,14 @@ export default function Jogo({ setClicado, clicado, arrayPalavra, arrayNaTela, s
         }
         setArrayNaTela(novoarray)
     }
+    // (verSeClicou==="foiClicado")
 
     return (
         <div className="Jogo">
             <img src={forca0} className="imageminicial" />
             <div>
                 <button className={`iniciajogo`} onClick={botaoclicado} > Escolher Palavra</button>
-                <p className="palavranatela">{mostra}</p>
+                <p className="palavranatela" >{mostra}</p>
             </div>
         </div>
     )

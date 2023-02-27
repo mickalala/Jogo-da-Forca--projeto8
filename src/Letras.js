@@ -12,8 +12,8 @@ export default function Letras({clicado,}) {
   
     return(
         <ul className="letrasnatela">
-        {alfabeto.map((alf) => ( 
-                <button className="letra" disabled={!(confirma==="foiClicado")|| terminadas.includes(alf) } onClick={()=>foiSelecionada(alf)}>{alf}</button>
+        {alfabeto.map((alf,index) => ( 
+                <button key={index} className="letra" disabled={!(confirma==="foiClicado")|| terminadas.includes(alf) } onClick={()=>foiSelecionada(alf)}>{alf}</button>
         )
         )}
         </ul>

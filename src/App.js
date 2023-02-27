@@ -6,19 +6,32 @@ import Jogo from "./Jogo";
 import { useState } from "react";
 
 function App() {
-  const [clicado, setClicado]= useState([""])
+  const [clicado, setClicado]= useState("")
   let palavraASerUsada= Math.floor(Math.random()*palavras.length);
   console.log(clicado);
   const palavra=palavras[palavraASerUsada];
   const arrayPalavra = [];
   const [arrayNaTela, setArrayNaTela]= useState([])
   const[erro, setErro]= useState([0]);
+  const novoarray=[...arrayNaTela]
  
   function constroiArray() {
+    
       for (let i = 0; i < palavra.length; i++) {
           arrayPalavra.push(palavra[i])
       } 
+      let num=arrayPalavra.length;
+      
+    
   }
+  function constroiUnderlines(num) {
+    console.log("AAAAAAAAAAAAAAAAAAAAAAA");
+   for(let i=0;i<num;i++){
+       novoarray.push(" _ ")
+    }
+    setArrayNaTela(novoarray)
+
+}
   function verificaClicado(){
     if(clicado==="foiClicado"){
   constroiArray();}
